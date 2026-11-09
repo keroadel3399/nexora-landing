@@ -1,0 +1,47 @@
+/* ============================================================
+   NEXORA — journey line (wavy rail + glowing scroll dot)
+   Layered behind all content (z-index:-1), above the aurora bg.
+   ============================================================ */
+.journey{
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 0;
+  z-index: -1; pointer-events: none; overflow: visible;
+}
+.journey-svg{
+  position: absolute; top: 0; left: 0;
+  display: block; overflow: visible;
+}
+
+/* faint dashed rail */
+.j-base{
+  stroke: rgba(255, 255, 255, .14); stroke-width: 2;
+  stroke-dasharray: 2 16; stroke-linecap: round;
+}
+
+/* soft wide halo stroke + solid lit segment (both scroll-revealed) */
+.j-glow{ stroke: url(#jGrad); stroke-width: 9; opacity: .16; stroke-linecap: round; }
+.j-prog{ stroke: url(#jGrad); stroke-width: 2.5; stroke-linecap: round; }
+
+/* travelling glowing dot */
+.j-dot{
+  fill: #fff;
+  filter:
+    drop-shadow(0 0 5px rgba(255, 255, 255, .95))
+    drop-shadow(0 0 16px rgba(124, 92, 255, .9))
+    drop-shadow(0 0 30px rgba(0, 229, 199, .55));
+}
+.j-halo{
+  fill: none; stroke: #00e5c7; stroke-width: 2;
+  transform-box: fill-box; transform-origin: center;
+  animation: jPulse 2.2s ease-out infinite;
+}
+@keyframes jPulse{
+  0%   { transform: scale(.5); opacity: .85; }
+  70%  { opacity: .25; }
+  100% { transform: scale(2.7); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .j-halo{ animation: none; opacity: .3; }
+  .j-dot{ filter: none; }
+}
