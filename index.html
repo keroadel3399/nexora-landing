@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Nexora — Digital Growth Studio</title>
+<meta name="description" content="Nexora is a performance-driven digital marketing studio: paid media, SEO, branding and CRO engineered for measurable growth." />
+<meta name="theme-color" content="#05060b" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Nexora — Digital Growth Studio" />
+<meta property="og:description" content="Performance marketing, SEO, branding and CRO engineered for measurable revenue growth." />
+<meta property="og:locale" content="en_US" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c5cff'/%3E%3Cstop offset='.5' stop-color='%23c04dff'/%3E%3Cstop offset='1' stop-color='%2300e5c7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%2305060b'/%3E%3Cpath d='M18 46V18l28 28V18' fill='none' stroke='url(%23g)' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Cairo:wght@400;600;700;900&display=swap" /></noscript>
+<link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="is-loading">
+
+<!-- ============ PRELOADER ============ -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader-inner">
+    <div class="preloader-mark">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <path class="pl-path" d="M14 50V14l36 36V14" fill="none" stroke="url(#plg)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs><linearGradient id="plg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#7c5cff"/><stop offset=".55" stop-color="#c04dff"/><stop offset="1" stop-color="#00e5c7"/>
+        </linearGradient></defs>
+      </svg>
+    </div>
+    <div class="preloader-bar"><span id="plBar"></span></div>
+    <p class="preloader-text" data-i18n="preloader">Loading experience</p>
+  </div>
+</div>
+
+<a class="skip-link" href="#services" data-i18n="a11y.skip">Skip to content</a>
+
+<!-- ============ CURSOR ============ -->
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor-dot"></span><span class="cursor-ring"></span></div>
+
+<!-- ============ BACKGROUND ============ -->
+<div class="bg" aria-hidden="true">
+  <canvas id="stars"></canvas>
+  <div class="aurora aurora-1"></div>
+  <div class="aurora aurora-2"></div>
+  <div class="aurora aurora-3"></div>
+  <div class="grid-lines"></div>
+  <div class="grain"></div>
+</div>
+
+<div class="scroll-progress" aria-hidden="true"><i id="scrollBar"></i></div>
+<div class="scroll-dot" aria-hidden="true"><i id="scrollDot"></i></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="brand" aria-label="Nexora home">
+      <span class="brand-mark">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M14 50V14l36 36V14" fill="none" stroke="url(#bg1)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs><linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#7c5cff"/><stop offset=".55" stop-color="#c04dff"/><stop offset="1" stop-color="#00e5c7"/>
+          </linearGradient></defs>
+        </svg>
+      </span>
+      <span class="brand-text">NEXORA<em>.</em></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#work" data-i18n="nav.work">Work</a>
+      <a href="#process" data-i18n="nav.process">Process</a>
+      <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="lang" id="langWrap">
+        <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" aria-controls="langMenu" aria-label="Change language">
+          <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.4 4 5.6 4 9s-1.4 6.6-4 9c-2.6-2.4-4-5.6-4-9s1.4-6.6 4-9z"/></svg>
+          <span id="langCurrent">EN</span>
+          <svg viewBox="0 0 24 24" class="chev" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="lang-menu" id="langMenu" role="listbox" aria-label="Language"></div>
+      </div>
+      <a href="#contact" class="btn btn-primary btn-sm magnetic" data-i18n="nav.cta">Book a call</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MOBILE MENU ============ -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="mobile-inner">
+    <nav class="mobile-links">
+      <a href="#services"><span>01</span><b data-i18n="nav.services">Services</b></a>
+      <a href="#work"><span>02</span><b data-i18n="nav.work">Work</b></a>
+      <a href="#process"><span>03</span><b data-i18n="nav.process">Process</b></a>
+      <a href="#pricing"><span>04</span><b data-i18n="nav.pricing">Pricing</b></a>
+      <a href="#faq"><span>05</span><b data-i18n="nav.faq">FAQ</b></a>
+    </nav>
+    <a href="#contact" class="btn btn-primary mobile-cta" data-i18n="nav.cta">Book a call</a>
+    <div class="mobile-meta">
+      <a href="mailto:hello@nexora.studio">hello@nexora.studio</a>
+      <span>© <span id="yearMobile">2026</span> Nexora</span>
+    </div>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="pill" data-reveal>
+          <span class="live-dot"></span>
+          <span data-i18n="hero.eyebrow">Growth studio · 12 markets · 240+ brands</span>
+        </span>
+
+        <h1 class="hero-title">
+          <span class="line" data-split data-i18n="hero.t1">We turn attention</span>
+          <span class="line grad" data-split data-i18n="hero.t2">into revenue.</span>
+          <span class="line small" data-split data-i18n="hero.t3">Performance marketing, engineered.</span>
+        </h1>
+
+        <p class="hero-sub" data-reveal data-i18n="hero.sub">
+          Nexora is a full-funnel digital marketing studio. We combine paid media, SEO,
+          creative and CRO into one growth system — measured in pipeline, not impressions.
+        </p>
+
+        <div class="hero-actions" data-reveal>
+          <a href="#contact" class="btn btn-primary magnetic" data-cursor="grow">
+            <span data-i18n="hero.cta1">Get a free growth audit</span>
+            <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#work" class="btn btn-ghost magnetic" data-cursor="grow">
+            <span data-i18n="hero.cta2">See our results</span>
+            <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7l8 5-8 5V7z"/></svg></span>
+          </a>
+        </div>
+
+        <div class="hero-proof" data-reveal>
+          <div class="avatars" aria-hidden="true">
+            <span>AK</span><span>MR</span><span>JS</span><span>+</span>
+          </div>
+          <div>
+            <div class="stars" aria-hidden="true">★★★★★ <b>4.9/5</b></div>
+            <p data-i18n="hero.proof">Rated by 180+ founders &amp; CMOs</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- console visual -->
+      <div class="hero-visual" id="heroVisual">
+        <div class="glow-orb"></div>
+        <div class="console" data-tilt>
+          <div class="console-top">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="console-title">nexora / live-performance</span>
+            <span class="console-badge"><i class="live-dot"></i>LIVE</span>
+          </div>
+
+          <div class="console-body">
+            <div class="kpis">
+              <div class="kpi">
+                <span class="kpi-label">ROAS</span>
+                <strong class="kpi-val" data-count="4.8" data-decimals="1">0.0</strong>
+                <span class="kpi-delta up">+214%</span>
+              </div>
+              <div class="kpi">
+                <span class="kpi-label">CPA</span>
+                <strong class="kpi-val"><span data-count="38" data-decimals="0">0</span>%</strong>
+                <span class="kpi-delta down">−38%</span>
+              </div>
+              <div class="kpi">
+                <span class="kpi-label">CTR</span>
+                <strong class="kpi-val"><span data-count="6.2" data-decimals="1">0.0</span>%</strong>
+                <span class="kpi-delta up">+2.1pt</span>
+              </div>
+            </div>
+
+            <div class="chart">
+              <svg viewBox="0 0 420 150" preserveAspectRatio="none" class="chart-svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0" stop-color="#7c5cff"/><stop offset=".55" stop-color="#c04dff"/><stop offset="1" stop-color="#00e5c7"/>
+                  </linearGradient>
+                  <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#c04dff" stop-opacity=".38"/><stop offset="1" stop-color="#c04dff" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path class="chart-area" d="M0 118 C40 112 62 96 92 92 C124 88 138 104 168 96 C198 88 210 58 244 52 C278 46 292 66 320 56 C350 45 372 26 420 18 L420 150 L0 150 Z" fill="url(#areaGrad)"/>
+                <path class="chart-line" d="M0 118 C40 112 62 96 92 92 C124 88 138 104 168 96 C198 88 210 58 244 52 C278 46 292 66 320 56 C350 45 372 26 420 18" fill="none" stroke="url(#lineGrad)" stroke-width="3" stroke-linecap="round"/>
+                <circle class="chart-dot" cx="420" cy="18" r="5"/>
+              </svg>
+              <div class="chart-axis"><span>Jan</span><span>Mar</span><span>May</span><span>Jul</span><span>Sep</span><span>Nov</span></div>
+            </div>
+
+            <div class="bars" aria-hidden="true">
+              <span style="--h:38%"></span><span style="--h:52%"></span><span style="--h:44%"></span>
+              <span style="--h:66%"></span><span style="--h:58%"></span><span style="--h:82%"></span>
+              <span style="--h:74%"></span><span style="--h:96%"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="float-card fc-1" data-float>
+          <span class="fc-ico">↑</span>
+          <div><strong>+312%</strong><small data-i18n="hero.fc1">Organic traffic</small></div>
+        </div>
+        <div class="float-card fc-2" data-float>
+          <span class="fc-ico mint">◎</span>
+          <div><strong>#1</strong><small data-i18n="hero.fc2">SERP ranking</small></div>
+        </div>
+        <div class="float-card fc-3" data-float>
+          <span class="fc-ico pink">✦</span>
+          <div><strong>1,284</strong><small data-i18n="hero.fc3">Leads this week</small></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- stats strip -->
+    <div class="container">
+      <div class="stats" data-reveal>
+        <div class="stat">
+          <strong><span data-count="240" data-suffix="+">0</span></strong>
+          <p data-i18n="stats.s1">Brands scaled</p>
+        </div>
+        <div class="stat">
+          <strong><span data-count="4.8" data-decimals="1" data-suffix="x">0</span></strong>
+          <p data-i18n="stats.s2">Average ROAS</p>
+        </div>
+        <div class="stat">
+          <strong><span data-count="128" data-suffix="M">0</span></strong>
+          <p data-i18n="stats.s3">Ad spend managed</p>
+        </div>
+        <div class="stat">
+          <strong><span data-count="98" data-suffix="%">0</span></strong>
+          <p data-i18n="stats.s4">Client retention</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <section class="marquee-section" aria-label="Clients">
+    <p class="marquee-label" data-i18n="marquee.label">Trusted by fast-moving teams worldwide</p>
+    <div class="marquee">
+      <div class="marquee-track" id="marqueeTrack">
+        <span>LUMEN</span><i>✦</i><span>Vertex</span><i>✦</i><span>ORBIT</span><i>✦</i>
+        <span>Kōdo</span><i>✦</i><span>NORTHWIND</span><i>✦</i><span>Aurora</span><i>✦</i>
+        <span>PIXELCRAFT</span><i>✦</i><span>Zephyr</span><i>✦</i>
+        <span>LUMEN</span><i>✦</i><span>Vertex</span><i>✦</i><span>ORBIT</span><i>✦</i>
+        <span>Kōdo</span><i>✦</i><span>NORTHWIND</span><i>✦</i><span>Aurora</span><i>✦</i>
+        <span>PIXELCRAFT</span><i>✦</i><span>Zephyr</span><i>✦</i>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-reveal data-i18n="services.eyebrow">What we do</span>
+        <h2 data-reveal data-i18n="services.title">Six disciplines.<br>One growth engine.</h2>
+        <p data-reveal data-i18n="services.sub">Every channel is connected to the same revenue model, so budget moves to whatever compounds fastest.</p>
+      </div>
+      <div class="services-grid" id="servicesGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="section" id="process">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow" data-reveal data-i18n="process.eyebrow">How we work</span>
+        <h2 data-reveal data-i18n="process.title">From audit to compounding growth</h2>
+        <p data-reveal data-i18n="process.sub">A transparent 4-phase system. You always know what is being tested, why, and what it returned.</p>
+      </div>
+      <div class="process" id="processList">
+        <div class="process-line" aria-hidden="true"><i id="processFill"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORK / CASES ============ -->
+  <section class="section" id="work">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-reveal data-i18n="work.eyebrow">Selected work</span>
+        <h2 data-reveal data-i18n="work.title">Numbers we are proud of</h2>
+        <p data-reveal data-i18n="work.sub">Real accounts, real budgets, measured over 6–12 months of compounding optimisation.</p>
+      </div>
+      <div class="cases" id="casesGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ RESULTS / CHART ============ -->
+  <section class="section" id="results">
+    <div class="container results-grid">
+      <div class="results-copy">
+        <span class="eyebrow" data-reveal data-i18n="results.eyebrow">Impact</span>
+        <h2 data-reveal data-i18n="results.title">Growth you can put in a spreadsheet</h2>
+        <p data-reveal data-i18n="results.sub">We report on revenue, CAC payback and contribution margin — the only metrics that survive a board meeting.</p>
+        <ul class="check-list" id="resultsList" data-reveal></ul>
+        <a href="#contact" class="btn btn-outline magnetic" data-reveal>
+          <span data-i18n="results.cta">Request the full case deck</span>
+          <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="results-panel" data-reveal data-tilt-soft>
+        <div class="panel-head">
+          <div>
+            <span class="panel-label" data-i18n="results.chartLabel">Qualified pipeline</span>
+            <strong class="panel-val">$<span data-count="12.4" data-decimals="1">0</span>M</strong>
+          </div>
+          <span class="chip up">+186% YoY</span>
+        </div>
+        <div class="col-chart" id="colChart">
+          <div class="col" style="--v:.32"><i></i><span>Q1</span></div>
+          <div class="col" style="--v:.45"><i></i><span>Q2</span></div>
+          <div class="col" style="--v:.58"><i></i><span>Q3</span></div>
+          <div class="col" style="--v:.63"><i></i><span>Q4</span></div>
+          <div class="col" style="--v:.79"><i></i><span>Q1</span></div>
+          <div class="col" style="--v:.9"><i></i><span>Q2</span></div>
+          <div class="col peak" style="--v:1"><i></i><span>Q3</span></div>
+        </div>
+        <div class="gauge-row">
+          <div class="gauge" style="--g:98">
+            <div class="gauge-inner"><strong>98%</strong><small data-i18n="results.gauge">Retention</small></div>
+          </div>
+          <div class="gauge-copy">
+            <strong data-i18n="results.gaugeTitle">Clients renew after year one</strong>
+            <p data-i18n="results.gaugeSub">Because the reporting is honest and the roadmap keeps paying off.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow" data-reveal data-i18n="testi.eyebrow">Testimonials</span>
+        <h2 data-reveal data-i18n="testi.title">What partners say</h2>
+      </div>
+      <div class="slider" id="slider">
+        <div class="slider-track" id="sliderTrack"></div>
+        <div class="slider-controls">
+          <button class="s-btn" id="prevBtn" aria-label="Previous testimonial"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <div class="dots" id="sliderDots"></div>
+          <button class="s-btn" id="nextBtn" aria-label="Next testimonial"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow" data-reveal data-i18n="pricing.eyebrow">Engagements</span>
+        <h2 data-reveal data-i18n="pricing.title">Simple, senior, no fluff</h2>
+        <p data-reveal data-i18n="pricing.sub">Flat monthly retainers. Cancel with 30 days notice. Media budget stays in your accounts.</p>
+        <div class="toggle" data-reveal>
+          <button class="active" data-billing="monthly" data-i18n="pricing.monthly">Monthly</button>
+          <button data-billing="annual"><span data-i18n="pricing.annual">Annual</span><em data-i18n="pricing.save">Save 20%</em></button>
+        </div>
+      </div>
+      <div class="pricing-grid" id="pricingGrid"></div>
+      <p class="pricing-note" data-reveal data-i18n="pricing.note">All plans include: dedicated strategist · weekly reporting · Slack channel · no lock-in.</p>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" id="faq">
+    <div class="container faq-grid">
+      <div class="faq-copy">
+        <span class="eyebrow" data-reveal data-i18n="faq.eyebrow">FAQ</span>
+        <h2 data-reveal data-i18n="faq.title">Questions, answered</h2>
+        <p data-reveal data-i18n="faq.sub">Still curious? Send a message — a strategist replies within one business day.</p>
+        <a href="#contact" class="btn btn-ghost magnetic" data-reveal>
+          <span data-i18n="faq.cta">Talk to a strategist</span>
+        </a>
+      </div>
+      <div class="faq-list" id="faqList"></div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT / CTA ============ -->
+  <section class="section cta-section" id="contact">
+    <div class="container">
+      <div class="cta-card" data-reveal>
+        <div class="cta-glow" aria-hidden="true"></div>
+        <div class="cta-blob" aria-hidden="true"></div>
+        <span class="eyebrow" data-i18n="cta.eyebrow">Let's build</span>
+        <h2 data-i18n="cta.title">Your next growth curve starts with one audit</h2>
+        <p data-i18n="cta.sub">Send your site and goals. You get a free 12-point growth audit and a 90-day plan — no pitch deck required.</p>
+        <form class="cta-form" id="ctaForm" novalidate>
+          <label class="sr-only" for="email" data-i18n="cta.label">Work email</label>
+          <input id="email" type="email" name="email" autocomplete="email" required
+                 data-i18n-attr="placeholder:cta.placeholder" placeholder="you@company.com" />
+          <button type="submit" class="btn btn-primary magnetic" data-cursor="grow">
+            <span data-i18n="cta.button">Get my audit</span>
+            <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </form>
+        <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+        <div class="cta-meta">
+          <span data-i18n="cta.m1">No spam, ever</span>
+          <span data-i18n="cta.m2">Reply in 24h</span>
+          <span data-i18n="cta.m3">NDA friendly</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#top" class="brand">
+          <span class="brand-mark">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M14 50V14l36 36V14" fill="none" stroke="url(#bg2)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs><linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#7c5cff"/><stop offset=".55" stop-color="#c04dff"/><stop offset="1" stop-color="#00e5c7"/>
+              </linearGradient></defs>
+            </svg>
+          </span>
+          <span class="brand-text">NEXORA<em>.</em></span>
+        </a>
+        <p data-i18n="footer.about">A performance digital marketing studio for brands that want compounding growth, not vanity metrics.</p>
+        <div class="socials" id="socials" aria-label="Social links"></div>
+      </div>
+      <div class="footer-cols" id="footerCols"></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year">2026</span> Nexora Studio. <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <div class="footer-legal">
+        <a href="#" data-i18n="footer.privacy">Privacy</a>
+        <a href="#" data-i18n="footer.terms">Terms</a>
+        <button class="lang-mini" id="langMini" aria-label="Change language">
+          <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.4 4 5.6 4 9s-1.4 6.6-4 9c-2.6-2.4-4-5.6-4-9s1.4-6.6 4-9z"/></svg>
+          <span id="langMiniLabel">English</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<noscript>
+  <style>.preloader{display:none}.cursor{display:none}.is-loading body{opacity:1}</style>
+</noscript>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
