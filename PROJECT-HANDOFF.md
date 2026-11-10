@@ -20,6 +20,9 @@
 | النسخة العربية | https://keroadel3399.github.io/nexora-landing/?lang=ar |
 | المستودع على GitHub | https://github.com/keroadel3399/nexora-landing |
 | حساب GitHub | **keroadel3399** — مسجل دخول في GitHub Desktop على الماك |
+| لينك هذا الملف (يُعطى للشات الجديد) | https://raw.githubusercontent.com/keroadel3399/nexora-landing/main/PROJECT-HANDOFF.md |
+
+**أحدث كومِت:** `a09b747` — Journey Line (مرفوع ومؤكد على الموقع لايف)
 
 ## 3) ملفات المشروع على الماك
 
@@ -30,7 +33,8 @@
 - `assets/js/i18n.js` — قاموس الترجمة (6 لغات) — **تغيير أي نص بأي لغة بيتم من هنا**
 - `assets/js/main.js` — محرك التفاعلات والرندرة واختيار اللغة
 - `README.md` + `.gitignore` + `PROJECT-HANDOFF.md` (الملف ده)
-- **نسخة التسليم للعميل:** `/Users/mm/Desktop/Nexora-Website.zip` (47 KB — نظيفة بدون ملفات اختبار)
+- **نسخة التسليم للعميل:** `/Users/mm/Desktop/Nexora-Website.zip` (~55 KB — فيها أنيميشن Journey Line — نظيفة بدون ملفات اختبار وبدون .git)
+- `.git/credhelper.sh` — سكربت داخلي بيقرأ توكن GitHub من الـKeychain تلقائيًا (مهم للـpush — انظر القسم 5)
 - `~/nexora-landing/_shots/` — ملفات اختبار قديمة، مستبعدة من git
 
 ## 4) مميزات الموقع (اتحقق منها فعليًا)
@@ -55,9 +59,13 @@
   export GIT_TEMPLATE_DIR="$APP/share/git-core/templates"
   "$APP/bin/git" ...
   ```
-- **للـPush:** محتاج `GIT_ASKPASS` سكربت بيجيب التوكن من الـKeychain:
-  `security find-generic-password -a keroadel3399 -w` — (الـsvce = `GitHub - https://api.github.com`)
-- **نافذة الباسورد:** أثناء الـpush الماك بيطلب **باسورد اللاب توب** (مش باسورد GitHub) — المستخدم لازم يكتبه صح ويضغط Allow/Always Allow (المستخدم رفضها بالغلط مرة لانه فكرها باسورد جيت هب)
+- **مشكلة الـpush المكتشفة:** جيت المدمج بيرجع `--exec-path` غلط (`//libexec/git-core`) — الأوامر المحلية (add/commit) شغالة عادي، لكن push/fetch بيفشل بـ `remote helper 'https' aborted session` — الحل: تمرير `GIT_EXEC_PATH` بالمسار الصحيح (الأمر الجاهز تحت)
+- **للـPush (الحل النهائي المؤكد — صامت بدون أي نافذة):** الـrepo فيه credential helper جاهز (`credential.helper = /Users/mm/nexora-landing/.git/credhelper.sh`) بيقرأ توكن GitHub Desktop من الـKeychain تلقائيًا (service = `GitHub - https://api.github.com`, account = `keroadel3399`). الأمر الجاهز:
+  ```bash
+  APP="/Applications/GitHub Desktop.app/Contents/Resources/app/git"
+  cd ~/nexora-landing && GIT_EXEC_PATH="$APP/libexec/git-core" "$APP/bin/git" push origin main
+  ```
+- **لو ظهرت نافذة باسورد** (يعني السكربت اتشال): الماك بيطلب **باسورد اللاب توب** (مش باسورد GitHub) — المستخدم لازم يكتبه ويضغط Always Allow
 - `curl` متاح — **النشر الأول تم بيه بالكامل** (GitHub API: إنشاء repo → push → تفعيل Pages). أول بناء للـPages أخد حوالي دقيقتين
 - GitHub Desktop نفسه مسجل دخول وشغال — بيعمل push من غير أي نافذة
 
@@ -65,7 +73,7 @@
 
 1. عدّل الملفات في `/Users/mm/nexora-landing`
 2. Commit بالـgit المدمج (الأوامر فوق)
-3. Push بنفس البيئة + الـaskpass → نافذة باسورد الماك مرة واحدة
+3. Push بالأمر الجاهز (GIT_EXEC_PATH + الـcredential helper الجاهز) — صامت بدون أي نافذة
 4. GitHub Pages بيعيد النشر تلقائي خلال ~دقيقة
 - **بديل بدون أوامر:** المستخدم يفتح GitHub Desktop → يكتب ملخص التعديل → Commit to main → **Push origin**
 
@@ -92,4 +100,5 @@
 5. تهيئة git repo محلي — كوميتات: `ddda070` (الموقع) + `33327eb` (README)
 6. **النشر:** إنشاء repo على GitHub + push + تفعيل Pages → الموقع لايف (HTTP 200 للإنجليزية والعربية)
 7. ربط النسخة المحلية بـ origin وتتبع main — كل حاجة متزامنة
-8. إضافة أنيميشن Journey Line (خط مموج + نقطة مضيئة بالسكورول) + رفعها + تحديث ملف التسليم (10 نوفمبر 2026)
+8. إضافة أنيميشن Journey Line (خط مموج + نقطة مضيئة بالسكورول) — كومِت `a09b747`
+9. إصلاح مشكلة الـpush (exec-path غلط + إضافة credhelper.sh يقرأ التوكن من الـKeychain بصمت) → الرفع نجح، والتحقق إن GitHub Pages نشرها فعليًا (journey.js/css رجعت 200)، وإعادة بناء الـzip للعميل + تحديث هذا الملف (10 نوفمبر 2026)
