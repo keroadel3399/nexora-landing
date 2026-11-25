@@ -119,12 +119,40 @@ function setLang(code) {
 }
 
 /* ---------- split text ---------- */
-function splitHero() {
-  /* Typewriter / per-letter effect removed: hero text is static and never re-animates. */
+let heroPlayed = false;
+function splitHero(animate) {
   const title = $(".hero-title");
   if (!title) return;
-  title.classList.remove("will-split");
-  title.classList.add("split-done", "force-done");
+  if (!animate || heroPlayed) { // never restart: plain static text
+    title.classList.remove("will-split");
+    title.classList.add("split-done", "force-done");
+    return;
+  }
+  heroPlayed = true;
+  title.classList.remove("force-done");
+  const rtl = document.documentElement.getAttribute("dir") === "rtl";
+  title.classList.remove("split-done");
+  title.classList.add("will-split");
+  $$(".line", title).forEach((line, li) => {
+    line.style.setProperty("--i", String(li));
+    const text = line.textContent || "";
+    if (rtl || prefersReduced) {
+      line.textContent = text; // whole-line animation (keeps Arabic shaping)
+    } else {
+      const frag = document.createDocumentFragment();
+      Array.from(text).forEach((ch, i) => {
+        if (ch === " ") { frag.appendChild(document.createTextNode(" ")); return; }
+        const s = document.createElement("span");
+        s.className = "char";
+        s.style.setProperty("--i", String(i));
+        s.textContent = ch;
+        frag.appendChild(s);
+      });
+      line.textContent = "";
+      line.appendChild(frag);
+    }
+  });
+  requestAnimationFrame(() => requestAnimationFrame(() => title.classList.add("split-done")));
 }
 
 /* ---------- reveal ---------- */
@@ -198,7 +226,7 @@ function finishLoad() {
   const pre = $("#preloader"); if (pre) pre.classList.add("done");
   setTimeout(() => {
     const c = $(".console"); if (c) c.classList.add("animated");
-    splitHero();
+    splitHero(true);
     observeReveals();
     observeCounts();
     startAutoplay();

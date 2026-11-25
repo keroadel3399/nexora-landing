@@ -39,8 +39,7 @@
     }
     var age = Date.now() - t0;
     var title = document.querySelector('.hero-title');
-    if (title && age > 1800 && !title.classList.contains('split-done')) title.classList.add('split-done');
-    if (age > 3200 && title) title.classList.add('force-done');
+        if (age > 6500 && title) title.classList.add('force-done');
     if (age > 3000) {
       var hero = document.querySelectorAll('.hero [data-reveal]:not(.visible)');
       for (var j = 0; j < hero.length; j++) hero[j].classList.add('visible');
