@@ -1,5 +1,5 @@
 /* ============================================================
-   NEXORA — journey line (wavy rail + glowing scroll dot)
+   71.arch — journey line (wavy rail + glowing scroll dot)
    Layered behind all content (z-index:-1), above the aurora bg.
    ============================================================ */
 .journey{
@@ -27,11 +27,11 @@
   fill: #fff;
   filter:
     drop-shadow(0 0 5px rgba(255, 255, 255, .95))
-    drop-shadow(0 0 16px rgba(124, 92, 255, .9))
-    drop-shadow(0 0 30px rgba(0, 229, 199, .55));
+    drop-shadow(0 0 16px rgba(198, 255, 0, .9))
+    drop-shadow(0 0 30px rgba(198, 255, 0, .55));
 }
 .j-halo{
-  fill: none; stroke: #00e5c7; stroke-width: 2;
+  fill: none; stroke: #c6ff00; stroke-width: 2;
   transform-box: fill-box; transform-origin: center;
   animation: jPulse 2.2s ease-out infinite;
 }

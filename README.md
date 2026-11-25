@@ -1,30 +1,14 @@
-# NEXORA — Digital Growth Studio
+# 71.arch
 
-Professional digital-marketing landing page with strong animations and full multilingual support.
+Landing page for 71.arch: STRATEGY. CREATIVITY. GROWTH.
 
-## ✨ Features
-- **6 languages**: English, العربية (RTL), Français, Español, Deutsch, Türkçe
-- Auto RTL/LTR switching + language saved in browser + shareable link (`?lang=ar`)
-- Strong animations: aurora/starfield canvas, split-text, magnetic buttons, custom cursor, counters, tilt cards, reveal-on-scroll
-- Dark theme, fully responsive, `prefers-reduced-motion` support
-- Pure HTML/CSS/JS — no build step needed
+Plain HTML, CSS and JavaScript. No build step. Hosted on GitHub Pages (main branch).
 
-## 🚀 Run locally
-Just open `index.html` in any browser. That's it.
+- `index.html`: page markup
+- `assets/css/`: styles and scroll-line styles
+- `assets/js/i18n.js`: translations (EN, AR, FR, ES, DE, TR)
+- `assets/js/main.js`, `journey.js`, `brand.js`: behavior, scroll line, smooth anchor scroll
+- `assets/img/`: logo and mark
 
-## 🌐 Deploy
-- **Netlify Drop**: drag this folder to https://app.netlify.com/drop
-- **GitHub Pages**: Settings → Pages → Branch `main` / root → Save
-
-## 📁 Structure
-```
-index.html          — page structure (SEO + Open Graph included)
-assets/css/styles.css  — theme, animations, RTL, responsive
-assets/js/i18n.js   — translations dictionary (6 languages)
-assets/js/main.js   — interactions & rendering engine
-```
-
-## ✏️ How to edit
-- Texts/translations → `assets/js/i18n.js`
-- Colors/theme → top of `assets/css/styles.css` (CSS variables)
-- Sections/layout → `index.html`
+Brand: lime #c6ff00, pink #ff2e93, background #0a0a0a.
+Placeholder content (clients, stats, testimonials, prices, social links) must be replaced with real details.

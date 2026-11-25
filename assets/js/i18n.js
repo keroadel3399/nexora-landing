@@ -1,18 +1,18 @@
 /* ============================================================
-   NEXORA — i18n dictionary (EN / AR-RTL / FR / ES / DE / TR)
+   71.arch — i18n dictionary (EN / AR-RTL / FR / ES / DE / TR)
    ============================================================ */
-const NEXORA_I18N = {
+const ARCH_I18N = {
 
 en: {
   meta: { lang: "en", dir: "ltr", label: "English", flag: "🇬🇧", htmlLang: "en",
-          title: "Nexora — Digital Growth Studio",
-          desc: "Nexora is a performance-driven digital marketing studio: paid media, SEO, branding and CRO engineered for measurable growth." },
+          title: "71.arch — Digital Growth Studio",
+          desc: "71.arch is a performance-driven digital marketing studio: paid media, SEO, branding and CRO engineered for measurable growth." },
   "a11y.skip": "Skip to content",
   "preloader": "Loading experience",
   "nav.services": "Services", "nav.work": "Work", "nav.process": "Process", "nav.pricing": "Pricing", "nav.faq": "FAQ", "nav.cta": "Book a call",
   "hero.eyebrow": "Growth studio · 12 markets · 240+ brands",
   "hero.t1": "We turn attention", "hero.t2": "into revenue.", "hero.t3": "Performance marketing, engineered.",
-  "hero.sub": "Nexora is a full-funnel digital marketing studio. We combine paid media, SEO, creative and CRO into one growth system — measured in pipeline, not impressions.",
+  "hero.sub": "71.arch is a full-funnel digital marketing studio. We combine paid media, SEO, creative and CRO into one growth system — measured in pipeline, not impressions.",
   "hero.cta1": "Get a free growth audit", "hero.cta2": "See our results", "hero.proof": "Rated by 180+ founders & CMOs",
   "hero.fc1": "Organic traffic", "hero.fc2": "SERP ranking", "hero.fc3": "Leads this week",
   "stats.s1": "Brands scaled", "stats.s2": "Average ROAS", "stats.s3": "Ad spend managed", "stats.s4": "Client retention",
@@ -101,14 +101,14 @@ en: {
 
 ar: {
   meta: { lang: "ar", dir: "rtl", label: "العربية", flag: "🇸🇦", htmlLang: "ar",
-          title: "نيكسورا — استوديو النمو الرقمي",
-          desc: "نيكسورا استوديو تسويق رقمي قائم على الأداء: إعلانات مدفوعة، وتحسين محركات البحث، وهوية العلامة، وتحسين التحويل — نمو قابل للقياس." },
+          title: "71.arch — استوديو النمو الرقمي",
+          desc: "71.arch استوديو تسويق رقمي قائم على الأداء: إعلانات مدفوعة، وتحسين محركات البحث، وهوية العلامة، وتحسين التحويل — نمو قابل للقياس." },
   "a11y.skip": "تخطَّ إلى المحتوى",
   "preloader": "جارٍ تحميل التجربة",
   "nav.services": "الخدمات", "nav.work": "أعمالنا", "nav.process": "منهجيتنا", "nav.pricing": "الأسعار", "nav.faq": "الأسئلة الشائعة", "nav.cta": "احجز مكالمة",
   "hero.eyebrow": "استوديو نمو · 12 سوقًا · +240 علامة",
   "hero.t1": "نحوّل الانتباه", "hero.t2": "إلى إيرادات.", "hero.t3": "تسويق أداء بمعايير هندسية.",
-  "hero.sub": "نيكسورا استوديو تسويق رقمي متكامل يجمع الإعلانات المدفوعة وتحسين محركات البحث والمحتوى الإبداعي وتحسين التحويل في منظومة نمو واحدة — تُقاس بالإيرادات لا بمرات الظهور.",
+  "hero.sub": "71.arch استوديو تسويق رقمي متكامل يجمع الإعلانات المدفوعة وتحسين محركات البحث والمحتوى الإبداعي وتحسين التحويل في منظومة نمو واحدة — تُقاس بالإيرادات لا بمرات الظهور.",
   "hero.cta1": "احصل على تحليل نمو مجاني", "hero.cta2": "شاهد نتائجنا", "hero.proof": "بتقييم أكثر من 180 مؤسسًا ومدير تسويق",
   "hero.fc1": "زيادة الزيارات العضوية", "hero.fc2": "ترتيب نتائج البحث", "hero.fc3": "عميل محتمل هذا الأسبوع",
   "stats.s1": "علامة طوّرناها", "stats.s2": "متوسط العائد على الإنفاق", "stats.s3": "إنفاق إعلاني مُدار", "stats.s4": "معدل بقاء العملاء",
@@ -197,14 +197,14 @@ ar: {
 
 fr: {
   meta: { lang: "fr", dir: "ltr", label: "Français", flag: "🇫🇷", htmlLang: "fr",
-          title: "Nexora — Studio de croissance digitale",
-          desc: "Nexora est un studio de marketing digital axé performance : paid media, SEO, branding et CRO au service d'une croissance mesurable." },
+          title: "71.arch — Studio de croissance digitale",
+          desc: "71.arch est un studio de marketing digital axé performance : paid media, SEO, branding et CRO au service d'une croissance mesurable." },
   "a11y.skip": "Aller au contenu",
   "preloader": "Chargement de l'expérience",
   "nav.services": "Services", "nav.work": "Réalisations", "nav.process": "Méthode", "nav.pricing": "Tarifs", "nav.faq": "FAQ", "nav.cta": "Réserver un appel",
   "hero.eyebrow": "Studio de croissance · 12 marchés · 240+ marques",
   "hero.t1": "Nous transformons l'attention", "hero.t2": "en revenus.", "hero.t3": "Le marketing performance, taillé sur mesure.",
-  "hero.sub": "Nexora est un studio marketing full-funnel. Nous combinons paid media, SEO, création et CRO en un seul système de croissance — mesuré en pipeline, pas en impressions.",
+  "hero.sub": "71.arch est un studio marketing full-funnel. Nous combinons paid media, SEO, création et CRO en un seul système de croissance — mesuré en pipeline, pas en impressions.",
   "hero.cta1": "Audit de croissance offert", "hero.cta2": "Voir nos résultats", "hero.proof": "Noté par 180+ fondateurs & CMOs",
   "hero.fc1": "Trafic organique", "hero.fc2": "Position SERP", "hero.fc3": "Leads cette semaine",
   "stats.s1": "Marques accompagnées", "stats.s2": "ROAS moyen", "stats.s3": "Budget publicitaire géré", "stats.s4": "Fidélisation client",
@@ -293,14 +293,14 @@ fr: {
 
 es: {
   meta: { lang: "es", dir: "ltr", label: "Español", flag: "🇪🇸", htmlLang: "es",
-          title: "Nexora — Estudio de crecimiento digital",
-          desc: "Nexora es un estudio de marketing digital orientado a resultados: paid media, SEO, branding y CRO para un crecimiento medible." },
+          title: "71.arch — Estudio de crecimiento digital",
+          desc: "71.arch es un estudio de marketing digital orientado a resultados: paid media, SEO, branding y CRO para un crecimiento medible." },
   "a11y.skip": "Ir al contenido",
   "preloader": "Cargando la experiencia",
   "nav.services": "Servicios", "nav.work": "Casos", "nav.process": "Método", "nav.pricing": "Precios", "nav.faq": "FAQ", "nav.cta": "Reservar llamada",
   "hero.eyebrow": "Estudio de crecimiento · 12 mercados · 240+ marcas",
   "hero.t1": "Convertimos la atención", "hero.t2": "en ingresos.", "hero.t3": "Marketing de resultados, diseñado con precisión.",
-  "hero.sub": "Nexora es un estudio full-funnel. Combinamos paid media, SEO, creatividad y CRO en un solo sistema de crecimiento — medido en pipeline, no en impresiones.",
+  "hero.sub": "71.arch es un estudio full-funnel. Combinamos paid media, SEO, creatividad y CRO en un solo sistema de crecimiento — medido en pipeline, no en impresiones.",
   "hero.cta1": "Auditoría de crecimiento gratis", "hero.cta2": "Ver resultados", "hero.proof": "Valorado por 180+ fundadores y CMOs",
   "hero.fc1": "Tráfico orgánico", "hero.fc2": "Posición en Google", "hero.fc3": "Leads esta semana",
   "stats.s1": "Marcas escaladas", "stats.s2": "ROAS promedio", "stats.s3": "Inversión publicitaria gestionada", "stats.s4": "Retención de clientes",
@@ -389,14 +389,14 @@ es: {
 
 de: {
   meta: { lang: "de", dir: "ltr", label: "Deutsch", flag: "🇩🇪", htmlLang: "de",
-          title: "Nexora — Digital Growth Studio",
-          desc: "Nexora ist ein Performance-Marketing-Studio: Paid Media, SEO, Branding und CRO für messbares Wachstum." },
+          title: "71.arch — Digital Growth Studio",
+          desc: "71.arch ist ein Performance-Marketing-Studio: Paid Media, SEO, Branding und CRO für messbares Wachstum." },
   "a11y.skip": "Zum Inhalt springen",
   "preloader": "Erlebnis wird geladen",
   "nav.services": "Leistungen", "nav.work": "Cases", "nav.process": "Prozess", "nav.pricing": "Preise", "nav.faq": "FAQ", "nav.cta": "Gespräch buchen",
   "hero.eyebrow": "Growth-Studio · 12 Märkte · 240+ Marken",
   "hero.t1": "Wir machen aus Aufmerksamkeit", "hero.t2": "Umsatz.", "hero.t3": "Performance-Marketing, präzise konstruiert.",
-  "hero.sub": "Nexora ist ein Full-Funnel-Studio. Wir verbinden Paid Media, SEO, Kreation und CRO zu einem Wachstumssystem — gemessen in Pipeline, nicht in Impressions.",
+  "hero.sub": "71.arch ist ein Full-Funnel-Studio. Wir verbinden Paid Media, SEO, Kreation und CRO zu einem Wachstumssystem — gemessen in Pipeline, nicht in Impressions.",
   "hero.cta1": "Kostenloses Growth-Audit", "hero.cta2": "Ergebnisse ansehen", "hero.proof": "Bewertet von 180+ Gründern & CMOs",
   "hero.fc1": "Organischer Traffic", "hero.fc2": "SERP-Ranking", "hero.fc3": "Leads diese Woche",
   "stats.s1": "Skalierte Marken", "stats.s2": "Durchschnittlicher ROAS", "stats.s3": "Verwaltetes Ad-Budget", "stats.s4": "Kundenbindung",
@@ -485,14 +485,14 @@ de: {
 
 tr: {
   meta: { lang: "tr", dir: "ltr", label: "Türkçe", flag: "🇹🇷", htmlLang: "tr",
-          title: "Nexora — Dijital Büyüme Stüdyosu",
-          desc: "Nexora, performans odaklı bir dijital pazarlama stüdyosudur: ölçülebilir büyüme için paid media, SEO, marka ve CRO." },
+          title: "71.arch — Dijital Büyüme Stüdyosu",
+          desc: "71.arch, performans odaklı bir dijital pazarlama stüdyosudur: ölçülebilir büyüme için paid media, SEO, marka ve CRO." },
   "a11y.skip": "İçeriğe geç",
   "preloader": "Deneyim yükleniyor",
   "nav.services": "Hizmetler", "nav.work": "İşler", "nav.process": "Süreç", "nav.pricing": "Fiyatlar", "nav.faq": "SSS", "nav.cta": "Görüşme ayarla",
   "hero.eyebrow": "Büyüme stüdyosu · 12 pazar · 240+ marka",
   "hero.t1": "Dikkati", "hero.t2": "gelire dönüştürüyoruz.", "hero.t3": "Performans pazarlaması, mühendislik disipliniyle.",
-  "hero.sub": "Nexora, full-funnel bir dijital pazarlama stüdyosudur. Paid media, SEO, yaratıcılık ve CRO'yu tek bir büyüme sisteminde birleştiririz — gösterimle değil, pipeline ile ölçülür.",
+  "hero.sub": "71.arch, full-funnel bir dijital pazarlama stüdyosudur. Paid media, SEO, yaratıcılık ve CRO'yu tek bir büyüme sisteminde birleştiririz — gösterimle değil, pipeline ile ölçülür.",
   "hero.cta1": "Ücretsiz büyüme analizi", "hero.cta2": "Sonuçları gör", "hero.proof": "180+ kurucu ve CMO tarafından puanlandı",
   "hero.fc1": "Organik trafik", "hero.fc2": "SERP sıralaması", "hero.fc3": "Bu haftaki lead",
   "stats.s1": "Büyütülen marka", "stats.s2": "Ortalama ROAS", "stats.s3": "Yönetilen reklam bütçesi", "stats.s4": "Müşteri devamlılığı",

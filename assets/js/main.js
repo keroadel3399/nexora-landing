@@ -1,5 +1,5 @@
 /* ============================================================
-   NEXORA — interactions engine
+   71.arch — interactions engine
    preloader · starfield · cursor · magnetic · tilt · reveal
    split-text · counters · nav · i18n/RTL · renderers · slider
    ============================================================ */
@@ -12,7 +12,7 @@ const $$ = (s, c = document) => Array.from((c || document).querySelectorAll(s));
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches;
-const LANG_ORDER = Object.keys(NEXORA_I18N);
+const LANG_ORDER = Object.keys(ARCH_I18N);
 
 let currentLang = "en";
 let billing = "monthly";
@@ -21,8 +21,8 @@ let slideCount = 0;
 let autoplayTimer = null;
 
 const t = (k) => {
-  const d = NEXORA_I18N[currentLang] || NEXORA_I18N.en;
-  return d[k] !== undefined ? d[k] : (NEXORA_I18N.en[k] !== undefined ? NEXORA_I18N.en[k] : k);
+  const d = ARCH_I18N[currentLang] || ARCH_I18N.en;
+  return d[k] !== undefined ? d[k] : (ARCH_I18N.en[k] !== undefined ? ARCH_I18N.en[k] : k);
 };
 const list = (k) => {
   const v = t(k);
@@ -37,7 +37,7 @@ function injectDefs() {
   wrap.innerHTML =
     '<svg width="0" height="0" style="position:absolute" focusable="false"><defs>' +
     '<linearGradient id="icoGrad" x1="0" y1="0" x2="1" y2="1">' +
-    '<stop offset="0" stop-color="#7c5cff"/><stop offset=".55" stop-color="#c04dff"/><stop offset="1" stop-color="#00e5c7"/>' +
+    '<stop offset="0" stop-color="#c6ff00"/><stop offset=".55" stop-color="#ff2e93"/><stop offset="1" stop-color="#c6ff00"/>' +
     "</linearGradient></defs></svg>";
   document.body.appendChild(wrap);
 }
@@ -60,13 +60,13 @@ function applyStatic() {
 function initialLang() {
   try {
     const q = new URLSearchParams(window.location.search).get("lang");
-    if (q && NEXORA_I18N[q.toLowerCase()]) return q.toLowerCase();
+    if (q && ARCH_I18N[q.toLowerCase()]) return q.toLowerCase();
   } catch (e) { /* ignore */ }
   let saved = null;
-  try { saved = localStorage.getItem("nexora_lang"); } catch (e) { /* private mode */ }
-  if (saved && NEXORA_I18N[saved]) return saved;
+  try { saved = localStorage.getItem("arch_lang"); } catch (e) { /* private mode */ }
+  if (saved && ARCH_I18N[saved]) return saved;
   const nav = (navigator.language || "en").slice(0, 2).toLowerCase();
-  return NEXORA_I18N[nav] ? nav : "en";
+  return ARCH_I18N[nav] ? nav : "en";
 }
 
 function buildLangMenu() {
@@ -74,7 +74,7 @@ function buildLangMenu() {
   if (!menu) return;
   menu.innerHTML = "";
   LANG_ORDER.forEach((code) => {
-    const d = NEXORA_I18N[code];
+    const d = ARCH_I18N[code];
     const b = document.createElement("button");
     b.type = "button";
     b.className = "lang-item" + (code === currentLang ? " active" : "");
@@ -90,16 +90,16 @@ function buildLangMenu() {
 }
 
 function setLang(code) {
-  if (!NEXORA_I18N[code]) return;
+  if (!ARCH_I18N[code]) return;
   currentLang = code;
-  const dict = NEXORA_I18N[code];
+  const dict = ARCH_I18N[code];
 
   document.documentElement.setAttribute("lang", dict.meta.htmlLang);
   document.documentElement.setAttribute("dir", dict.meta.dir);
   document.title = dict.meta.title;
   const md = $('meta[name="description"]');
   if (md) md.setAttribute("content", dict.meta.desc);
-  try { localStorage.setItem("nexora_lang", code); } catch (e) { /* ignore */ }
+  try { localStorage.setItem("arch_lang", code); } catch (e) { /* ignore */ }
 
   const lc = $("#langCurrent"); if (lc) lc.textContent = code.toUpperCase();
   const lm = $("#langMiniLabel"); if (lm) lm.textContent = dict.meta.label;
@@ -246,7 +246,7 @@ function initStars() {
   function frame() {
     ctx.clearRect(0, 0, w, h);
     const now = performance.now() / 1000;
-    ctx.fillStyle = "#cdd3ff";
+    ctx.fillStyle = "#f0ffb0";
     for (const s of stars) {
       s.y -= s.s; if (s.y < -4) s.y = h + 4;
       const tw = 0.55 + 0.45 * Math.sin(now * 1.7 + s.tw);
@@ -260,7 +260,7 @@ function initStars() {
   }
   size();
   if (prefersReduced) { // single static frame
-    ctx.clearRect(0, 0, w, h); ctx.fillStyle = "#cdd3ff";
+    ctx.clearRect(0, 0, w, h); ctx.fillStyle = "#f0ffb0";
     for (const s of stars) { ctx.globalAlpha = s.a; ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, 6.2832); ctx.fill(); }
     ctx.globalAlpha = 1;
   } else { frame(); }
@@ -414,10 +414,10 @@ const ICONS = [
 ];
 const GLYPHS = ["Sk", "B2", "Fi", "Re", "Lo", "Ac"];
 const AV_BG = [
-  "linear-gradient(135deg,#7c5cff,#c04dff)",
-  "linear-gradient(135deg,#00e5c7,#7c5cff)",
-  "linear-gradient(135deg,#ff5da2,#c04dff)",
-  "linear-gradient(135deg,#ffb547,#ff5da2)"
+  "linear-gradient(135deg,#c6ff00,#ff2e93)",
+  "linear-gradient(135deg,#c6ff00,#c6ff00)",
+  "linear-gradient(135deg,#ff2e93,#ff2e93)",
+  "linear-gradient(135deg,#ffb547,#ff2e93)"
 ];
 const SOCIALS = [
   { label: "X", path: "M17.7 3H21l-7.1 8.1L22.2 21h-6.6l-5.2-6.2L4.4 21H1.1l7.6-8.7L1.8 3h6.7l4.7 5.7L17.7 3zm-1.2 16h1.8L7.4 4.9H5.5L16.5 19z" },

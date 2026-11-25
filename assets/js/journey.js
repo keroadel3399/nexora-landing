@@ -1,13 +1,13 @@
 /* ============================================================
-   NEXORA — journey line
+   71.arch — journey line
    Wavy rail down the middle of the page; a glowing dot travels
    along it as you scroll, from the top of the page to the end.
    Vanilla JS · no dependencies · respects reduced motion
    ============================================================ */
 (()=>{
 "use strict";
-if (window.__nexoraJourney) return;
-window.__nexoraJourney = true;
+if (window.__archJourney) return;
+window.__archJourney = true;
 
 const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -18,9 +18,9 @@ wrap.innerHTML =
   '<svg class="journey-svg" aria-hidden="true">' +
   '<defs>' +
   '<linearGradient id="jGrad" x1="0" y1="0" x2="0" y2="1">' +
-  '<stop offset="0" stop-color="#7c5cff"/>' +
-  '<stop offset=".5" stop-color="#c04dff"/>' +
-  '<stop offset="1" stop-color="#00e5c7"/>' +
+  '<stop offset="0" stop-color="#c6ff00"/>' +
+  '<stop offset=".5" stop-color="#ff2e93"/>' +
+  '<stop offset="1" stop-color="#c6ff00"/>' +
   '</linearGradient>' +
   '</defs>' +
   '<path class="j-glow" fill="none"/>' +
