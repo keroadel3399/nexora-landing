@@ -37,7 +37,7 @@ function injectDefs() {
   wrap.innerHTML =
     '<svg width="0" height="0" style="position:absolute" focusable="false"><defs>' +
     '<linearGradient id="icoGrad" x1="0" y1="0" x2="1" y2="1">' +
-    '<stop offset="0" stop-color="#c6ff00"/><stop offset=".55" stop-color="#ff2e93"/><stop offset="1" stop-color="#c6ff00"/>' +
+    '<stop offset="0" stop-color="#c6ff00"/><stop offset=".55" stop-color="#c6ff00"/><stop offset="1" stop-color="#c6ff00"/>' +
     "</linearGradient></defs></svg>";
   document.body.appendChild(wrap);
 }
@@ -235,7 +235,7 @@ function initStars() {
     w = cv.clientWidth; h = cv.clientHeight;
     cv.width = Math.max(1, w * DPR); cv.height = Math.max(1, h * DPR);
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-    const n = Math.min(170, Math.floor((w * h) / 9000));
+    const n = Math.min(isTouch ? 50 : 170, Math.floor((w * h) / 9000));
     stars = Array.from({ length: n }, () => ({
       x: Math.random() * w, y: Math.random() * h,
       r: Math.random() * 1.4 + 0.3, a: Math.random() * 0.7 + 0.15,
@@ -243,7 +243,9 @@ function initStars() {
     }));
   }
   window.addEventListener("scroll", () => { sy = window.scrollY; }, { passive: true });
+  let skip = 0;
   function frame() {
+    if (isTouch && (skip ^= 1)) { raf = requestAnimationFrame(frame); return; }
     ctx.clearRect(0, 0, w, h);
     const now = performance.now() / 1000;
     ctx.fillStyle = "#f0ffb0";
@@ -414,10 +416,10 @@ const ICONS = [
 ];
 const GLYPHS = ["Sk", "B2", "Fi", "Re", "Lo", "Ac"];
 const AV_BG = [
-  "linear-gradient(135deg,#c6ff00,#ff2e93)",
   "linear-gradient(135deg,#c6ff00,#c6ff00)",
-  "linear-gradient(135deg,#ff2e93,#ff2e93)",
-  "linear-gradient(135deg,#ffb547,#ff2e93)"
+  "linear-gradient(135deg,#c6ff00,#c6ff00)",
+  "linear-gradient(135deg,#c6ff00,#c6ff00)",
+  "linear-gradient(135deg,#c6ff00,#c6ff00)"
 ];
 const SOCIALS = [
   { label: "X", path: "M17.7 3H21l-7.1 8.1L22.2 21h-6.6l-5.2-6.2L4.4 21H1.1l7.6-8.7L1.8 3h6.7l4.7 5.7L17.7 3zm-1.2 16h1.8L7.4 4.9H5.5L16.5 19z" },
@@ -482,10 +484,10 @@ function renderCases() {
     el.setAttribute("data-reveal", "");
     el.style.setProperty("--d", ((i % 3) * 0.09).toFixed(2) + "s");
     el.innerHTML =
-      '<div class="case-bg"><span class="case-glyph"></span></div>' +
+      '<div class="case-bg"><img alt="" loading="lazy" decoding="async"></div>' +
       '<div class="case-body"><span class="case-tag"></span><h3></h3>' +
       '<div class="case-metrics"><span class="m1"></span><span class="m2"></span></div></div>';
-    el.querySelector(".case-glyph").textContent = GLYPHS[i] || String(i + 1);
+    el.querySelector(".case-bg img").src = "assets/img/case" + ((i % 6) + 1) + ".jpg";
     el.querySelector(".case-tag").textContent = c.tag;
     el.querySelector("h3").textContent = c.title;
     el.querySelector(".m1").textContent = c.m1;
@@ -672,8 +674,10 @@ function renderFooter() {
 /* ---------- form ---------- */
 function initForm() {
   const form = $("#ctaForm"); if (!form) return;
-  const input = $("#email"), msg = $("#formMsg");
-  form.addEventListener("submit", (e) => {
+  const input = $("#email"), msg = $("#formMsg"), btn = $("button[type=submit]", form);
+  const ENDPOINT = "https://api.web3forms.com/submit";
+  const KEY = "dceae575-24e9-4455-ad37-c5391499d23a";
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const v = (input.value || "").trim();
     const ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
@@ -684,10 +688,33 @@ function initForm() {
       input.focus();
       return;
     }
+    const fd = new FormData(form);
+    if (fd.get("botcheck")) return;
     input.classList.remove("error");
-    msg.textContent = t("cta.msgOk");
-    msg.className = "form-msg ok";
-    input.value = "";
+    msg.textContent = t("cta.sending"); msg.className = "form-msg";
+    if (btn) btn.disabled = true;
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: KEY,
+          subject: "New 71.arch lead: " + (fd.get("name") || v),
+          from_name: "71.arch website",
+          name: fd.get("name") || "",
+          email: v,
+          message: fd.get("message") || "",
+          language: document.documentElement.lang || "en",
+          page: location.href
+        })
+      });
+      const data = await res.json();
+      if (!data.success) throw new Error("fail");
+      msg.textContent = t("cta.msgOk"); msg.className = "form-msg ok";
+      form.reset();
+    } catch (err) {
+      msg.textContent = t("cta.msgFail"); msg.className = "form-msg err";
+    } finally { if (btn) btn.disabled = false; }
   });
   input.addEventListener("input", () => {
     input.classList.remove("error");

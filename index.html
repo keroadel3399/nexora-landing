@@ -173,10 +173,10 @@
               <svg viewBox="0 0 420 150" preserveAspectRatio="none" class="chart-svg" aria-hidden="true">
                 <defs>
                   <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0" stop-color="#c6ff00"/><stop offset=".55" stop-color="#ff2e93"/><stop offset="1" stop-color="#c6ff00"/>
+                    <stop offset="0" stop-color="#c6ff00"/><stop offset=".55" stop-color="#c6ff00"/><stop offset="1" stop-color="#c6ff00"/>
                   </linearGradient>
                   <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0" stop-color="#ff2e93" stop-opacity=".38"/><stop offset="1" stop-color="#ff2e93" stop-opacity="0"/>
+                    <stop offset="0" stop-color="#c6ff00" stop-opacity=".38"/><stop offset="1" stop-color="#c6ff00" stop-opacity="0"/>
                   </linearGradient>
                 </defs>
                 <path class="chart-area" d="M0 118 C40 112 62 96 92 92 C124 88 138 104 168 96 C198 88 210 58 244 52 C278 46 292 66 320 56 C350 45 372 26 420 18 L420 150 L0 150 Z" fill="url(#areaGrad)"/>
@@ -387,10 +387,15 @@
         <span class="eyebrow" data-i18n="cta.eyebrow">Let's build</span>
         <h2 data-i18n="cta.title">Your next growth curve starts with one audit</h2>
         <p data-i18n="cta.sub">Send your site and goals. You get a free 12-point growth audit and a 90-day plan — no pitch deck required.</p>
-        <form class="cta-form" id="ctaForm" novalidate>
+        <form class="cta-form cta-form-x" id="ctaForm" novalidate>
+          <label class="sr-only" for="fname" data-i18n="cta.name">Your name</label>
+          <input id="fname" type="text" name="name" autocomplete="name" data-i18n-attr="placeholder:cta.name" placeholder="Your name" />
           <label class="sr-only" for="email" data-i18n="cta.label">Work email</label>
           <input id="email" type="email" name="email" autocomplete="email" required
                  data-i18n-attr="placeholder:cta.placeholder" placeholder="you@company.com" />
+          <label class="sr-only" for="fmsg" data-i18n="cta.msg">Your website and goals</label>
+          <textarea id="fmsg" name="message" data-i18n-attr="placeholder:cta.msg" placeholder="Your website and goals (optional)"></textarea>
+          <input class="hp" type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <button type="submit" class="btn btn-primary magnetic" data-cursor="grow">
             <span data-i18n="cta.button">Get my audit</span>
             <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>

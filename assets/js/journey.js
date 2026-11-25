@@ -19,7 +19,7 @@ wrap.innerHTML =
   '<defs>' +
   '<linearGradient id="jGrad" x1="0" y1="0" x2="0" y2="1">' +
   '<stop offset="0" stop-color="#c6ff00"/>' +
-  '<stop offset=".5" stop-color="#ff2e93"/>' +
+  '<stop offset=".5" stop-color="#c6ff00"/>' +
   '<stop offset="1" stop-color="#c6ff00"/>' +
   '</linearGradient>' +
   '</defs>' +
