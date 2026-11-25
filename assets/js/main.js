@@ -435,6 +435,7 @@ const AV_BG = [
   "linear-gradient(135deg,#c6ff00,#c6ff00)"
 ];
 const SOCIALS = [
+  { label: "Facebook", url: "https://www.facebook.com/profile.php?id=61595241055889", path: "M13.5 21v-8h2.7l.5-3.2h-3.2V7.9c0-.9.4-1.6 1.7-1.6h1.6V3.4c-.3 0-1.3-.1-2.4-.1-2.5 0-4.1 1.5-4.1 4.2v2.3H7.5V13h2.8v8h3.2z" },
   { label: "X", path: "M17.7 3H21l-7.1 8.1L22.2 21h-6.6l-5.2-6.2L4.4 21H1.1l7.6-8.7L1.8 3h6.7l4.7 5.7L17.7 3zm-1.2 16h1.8L7.4 4.9H5.5L16.5 19z" },
   { label: "LinkedIn", path: "M6.5 8.8H3.2V21h3.3V8.8zM4.8 3a1.9 1.9 0 100 3.9 1.9 1.9 0 000-3.9zM13 8.8H9.8V21H13v-6.4c0-1.7.8-2.8 2.3-2.8 1.4 0 2 .9 2 2.8V21h3.3v-7.2c0-3.4-1.8-5.2-4.4-5.2-2 0-3 1.1-3.2 2.2V8.8z" },
   { label: "Instagram", path: "M12 2.2c3.2 0 3.6 0 4.9.07 3.25.15 4.77 1.7 4.92 4.92.06 1.27.07 1.65.07 4.81s-.01 3.55-.07 4.81c-.15 3.22-1.66 4.77-4.92 4.92-1.3.06-1.67.07-4.9.07s-3.6-.01-4.86-.07c-3.26-.15-4.77-1.7-4.92-4.92C2.14 15.55 2.13 15.17 2.13 12s.01-3.55.07-4.81C2.35 3.97 3.87 2.42 7.13 2.27 8.4 2.2 8.8 2.2 12 2.2zm0 3.6a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zm0 2.2a4 4 0 110 8 4 4 0 010-8zm6.4-2.7a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" },
@@ -675,9 +676,9 @@ function renderFooter() {
   });
   const soc = $("#socials");
   if (soc && !soc.childElementCount) {
-    SOCIALS.filter((s) => s.label === "Instagram").forEach((s) => {
+    SOCIALS.filter((s) => s.label === "Instagram" || s.label === "Facebook").sort((a,b)=>a.label==="Instagram"?-1:1).forEach((s) => {
       const a = document.createElement("a");
-      a.href = "https://www.instagram.com/7.arch.eg"; a.target = "_blank"; a.rel = "noopener noreferrer"; a.setAttribute("aria-label", s.label);
+      a.href = s.url || "https://www.instagram.com/7.arch.eg"; a.target = "_blank"; a.rel = "noopener noreferrer"; a.setAttribute("aria-label", s.label);
       a.innerHTML = '<svg viewBox="0 0 24 24"><path d="' + s.path + '"/></svg>';
       soc.appendChild(a);
     });
