@@ -675,9 +675,9 @@ function renderFooter() {
   });
   const soc = $("#socials");
   if (soc && !soc.childElementCount) {
-    SOCIALS.forEach((s) => {
+    SOCIALS.filter((s) => s.label === "Instagram").forEach((s) => {
       const a = document.createElement("a");
-      a.href = "#"; a.setAttribute("aria-label", s.label);
+      a.href = "https://www.instagram.com/7.arch.eg"; a.target = "_blank"; a.rel = "noopener noreferrer"; a.setAttribute("aria-label", s.label);
       a.innerHTML = '<svg viewBox="0 0 24 24"><path d="' + s.path + '"/></svg>';
       soc.appendChild(a);
     });
