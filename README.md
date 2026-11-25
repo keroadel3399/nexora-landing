@@ -1,6 +1,6 @@
-# 71.arch
+# 7.arch
 
-Landing page for 71.arch: STRATEGY. CREATIVITY. GROWTH.
+Landing page for 7.arch: STRATEGY. CREATIVITY. GROWTH.
 
 Plain HTML, CSS and JavaScript. No build step. Hosted on GitHub Pages (main branch).
 

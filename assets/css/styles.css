@@ -1,5 +1,5 @@
 /* ============================================================
-   71.arch — Digital Growth Studio
+   7.arch — Digital Growth Studio
    Dark aurora theme · scroll animations · i18n (6 langs) · RTL
    ============================================================ */
 
@@ -102,7 +102,7 @@ strong { font-weight: 700; }
 .preloader-bar span {
   display: block; height: 100%; width: 0%; border-radius: inherit;
   background: var(--grad);
-  transition: width .25s ease;
+  transition: none;
 }
 .preloader-text { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--dim); }
 
@@ -1125,7 +1125,7 @@ section[id] { scroll-margin-top: 92px; }
 }
 
 /* ============================================================
-   71.arch brand layer: logo, lime + pink neon, glass polish
+   7.arch brand layer: logo, lime + pink neon, glass polish
    ============================================================ */
 :root {
   --lime: #c6ff00;

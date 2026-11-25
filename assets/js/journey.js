@@ -1,5 +1,5 @@
 /* ============================================================
-   71.arch — journey line
+   7.arch — journey line
    Wavy rail down the middle of the page; a glowing dot travels
    along it as you scroll, from the top of the page to the end.
    Vanilla JS · no dependencies · respects reduced motion

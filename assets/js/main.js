@@ -1,5 +1,5 @@
 /* ============================================================
-   71.arch — interactions engine
+   7.arch — interactions engine
    preloader · starfield · cursor · magnetic · tilt · reveal
    split-text · counters · nav · i18n/RTL · renderers · slider
    ============================================================ */
@@ -210,20 +210,25 @@ function animateCount(el) {
 function runPreloader() {
   const bar = $("#plBar"), pre = $("#preloader");
   if (!pre) { finishLoad(); return; }
-  let p = 0;
-  const tick = setInterval(() => {
-    p = Math.min(p + Math.random() * 16 + 5, 92);
-    if (bar) bar.style.width = p + "%";
-  }, 130);
-  let fired = false;
+  const DUR = 3600, t0 = performance.now();
+  let loaded = document.readyState === "complete", fired = false, raf = 0;
+  const ease = (x) => x < .5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
   const done = () => {
     if (fired) return; fired = true;
-    clearInterval(tick);
+    cancelAnimationFrame(raf);
     if (bar) bar.style.width = "100%";
-    setTimeout(finishLoad, 380);
+    setTimeout(finishLoad, 450);
   };
-  window.addEventListener("load", done, { once: true });
-  setTimeout(done, 2300);
+  const step = (now) => {
+    const x = Math.min((now - t0) / DUR, 1);
+    if (bar) bar.style.width = (ease(x) * 100).toFixed(1) + "%";
+    if (x >= 1 && loaded) { done(); return; }
+    raf = requestAnimationFrame(step);
+  };
+  raf = requestAnimationFrame(step);
+  window.addEventListener("load", () => { loaded = true; }, { once: true });
+  /* failsafe: never hold the page longer than this */
+  setTimeout(done, 5200);
 }
 function finishLoad() {
   document.body.classList.remove("is-loading");
@@ -713,8 +718,8 @@ function initForm() {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           access_key: KEY,
-          subject: "New 71.arch lead: " + (fd.get("name") || v),
-          from_name: "71.arch website",
+          subject: "New 7.arch lead: " + (fd.get("name") || v),
+          from_name: "7.arch website",
           name: fd.get("name") || "",
           email: v,
           message: fd.get("message") || "",

@@ -1,4 +1,4 @@
-/* 71.arch: scripted smooth scroll for in-page anchors (webviews that ignore CSS smooth scroll) */
+/* 7.arch: scripted smooth scroll for in-page anchors (webviews that ignore CSS smooth scroll) */
 (function () {
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   function ease(t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }

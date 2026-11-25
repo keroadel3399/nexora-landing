@@ -1,5 +1,5 @@
 /* ============================================================
-   71.arch — journey line (wavy rail + glowing scroll dot)
+   7.arch — journey line (wavy rail + glowing scroll dot)
    Layered behind all content (z-index:-1), above the aurora bg.
    ============================================================ */
 .journey{
