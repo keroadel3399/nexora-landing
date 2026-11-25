@@ -1350,3 +1350,18 @@ html[dir="rtl"] .brand-tagline { text-align: right; }
 .results-panel.visible .g-prog { animation: gauge-draw 1.6s var(--ease) .3s forwards; }
 @keyframes gauge-draw { to { stroke-dasharray: 94 100; } }
 .gauge-inner { position: relative; z-index: 1; }
+
+/* Back-to-top */
+.to-top {
+  position: fixed; z-index: 220; inset-inline-end: 16px; bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+  width: 48px; height: 48px; border-radius: 50%; padding: 0; display: grid; place-items: center; cursor: pointer;
+  background: #0a0a0a; color: #c6ff00; border: 1px solid rgba(198, 255, 0, .45);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .55);
+  opacity: 0; visibility: hidden; transform: translate3d(0, 18px, 0) scale(.8);
+  transition: opacity .35s ease, transform .45s cubic-bezier(.22, .61, .36, 1), visibility 0s linear .45s, background .2s ease, color .2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.to-top.is-on { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+.to-top:active { background: #c6ff00; color: #0a0a0a; }
+@media (hover: hover) { .to-top:hover { background: #c6ff00; color: #0a0a0a; } }
+@media (prefers-reduced-motion: reduce) { .to-top { transition: none; } }
