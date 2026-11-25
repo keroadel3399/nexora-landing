@@ -120,31 +120,11 @@ function setLang(code) {
 
 /* ---------- split text ---------- */
 function splitHero() {
+  /* Typewriter / per-letter effect removed: hero text is static and never re-animates. */
   const title = $(".hero-title");
   if (!title) return;
-  const rtl = document.documentElement.getAttribute("dir") === "rtl";
-  title.classList.remove("split-done");
-  title.classList.add("will-split");
-  $$(".line", title).forEach((line, li) => {
-    line.style.setProperty("--i", String(li));
-    const text = line.textContent || "";
-    if (rtl || prefersReduced) {
-      line.textContent = text; // whole-line animation (keeps Arabic shaping)
-    } else {
-      const frag = document.createDocumentFragment();
-      Array.from(text).forEach((ch, i) => {
-        if (ch === " ") { frag.appendChild(document.createTextNode(" ")); return; }
-        const s = document.createElement("span");
-        s.className = "char";
-        s.style.setProperty("--i", String(i));
-        s.textContent = ch;
-        frag.appendChild(s);
-      });
-      line.textContent = "";
-      line.appendChild(frag);
-    }
-  });
-  requestAnimationFrame(() => requestAnimationFrame(() => title.classList.add("split-done")));
+  title.classList.remove("will-split");
+  title.classList.add("split-done", "force-done");
 }
 
 /* ---------- reveal ---------- */
