@@ -17,6 +17,7 @@ en: {
   "hero.fc1": "Organic traffic", "hero.fc2": "SERP ranking", "hero.fc3": "Leads this week",
   "stats.s1": "Brands scaled", "stats.s2": "Average ROAS", "stats.s3": "Ad spend managed", "stats.s4": "Client retention",
   "marquee.label": "Our brands",
+  "film.eyebrow": "Brand film", "film.title": "Meet the studio.", "film.sub": "Eleven seconds on who we are and how we work.",
   "services.eyebrow": "What we do", "services.title": "Six disciplines.<br>One growth engine.",
   "services.sub": "Every channel is connected to the same revenue model, so budget moves to whatever compounds fastest.",
   "services.items": [
@@ -114,6 +115,7 @@ ar: {
   "hero.fc1": "زيادة الزيارات العضوية", "hero.fc2": "ترتيب نتائج البحث", "hero.fc3": "عميل محتمل هذا الأسبوع",
   "stats.s1": "علامة طوّرناها", "stats.s2": "متوسط العائد على الإنفاق", "stats.s3": "إنفاق إعلاني مُدار", "stats.s4": "معدل بقاء العملاء",
   "marquee.label": "براندات بنيناها",
+  "film.eyebrow": "فيلم البراند", "film.title": "تعرف علينا", "film.sub": "احدى عشر ثانية تعرفك احنا مين وبنشتغل ازاي.",
   "services.eyebrow": "ماذا نقدم", "services.title": "ستة تخصصات.<br>محرك نمو واحد.",
   "services.sub": "كل قناة مترابطة مع نموذج الإيرادات نفسه، فتتحرك الميزانية نحو ما يتراكم أسرع.",
   "services.items": [
@@ -211,6 +213,7 @@ fr: {
   "hero.fc1": "Trafic organique", "hero.fc2": "Position SERP", "hero.fc3": "Leads cette semaine",
   "stats.s1": "Marques accompagnées", "stats.s2": "ROAS moyen", "stats.s3": "Budget publicitaire géré", "stats.s4": "Fidélisation client",
   "marquee.label": "Nos marques",
+  "film.eyebrow": "Film de marque", "film.title": "Découvrez le studio.", "film.sub": "Onze secondes pour comprendre qui nous sommes et comment nous travaillons.",
   "services.eyebrow": "Notre expertise", "services.title": "Six disciplines.<br>Un moteur de croissance.",
   "services.sub": "Chaque canal est relié au même modèle de revenus : le budget va là où ça compose le plus vite.",
   "services.items": [
@@ -308,6 +311,7 @@ es: {
   "hero.fc1": "Tráfico orgánico", "hero.fc2": "Posición en Google", "hero.fc3": "Leads esta semana",
   "stats.s1": "Marcas escaladas", "stats.s2": "ROAS promedio", "stats.s3": "Inversión publicitaria gestionada", "stats.s4": "Retención de clientes",
   "marquee.label": "Nuestras marcas",
+  "film.eyebrow": "Film de marca", "film.title": "Conoce el estudio.", "film.sub": "Once segundos para saber quiénes somos y cómo trabajamos.",
   "services.eyebrow": "Qué hacemos", "services.title": "Seis disciplinas.<br>Un motor de crecimiento.",
   "services.sub": "Cada canal está conectado al mismo modelo de ingresos: el presupuesto se mueve hacia lo que compone más rápido.",
   "services.items": [
@@ -405,6 +409,7 @@ de: {
   "hero.fc1": "Organischer Traffic", "hero.fc2": "SERP-Ranking", "hero.fc3": "Leads diese Woche",
   "stats.s1": "Skalierte Marken", "stats.s2": "Durchschnittlicher ROAS", "stats.s3": "Verwaltetes Ad-Budget", "stats.s4": "Kundenbindung",
   "marquee.label": "Unsere Marken",
+  "film.eyebrow": "Markenfilm", "film.title": "Lerne das Studio kennen.", "film.sub": "Elf Sekunden darüber, wer wir sind und wie wir arbeiten.",
   "services.eyebrow": "Was wir tun", "services.title": "Sechs Disziplinen.<br>Ein Wachstumsmotor.",
   "services.sub": "Jeder Kanal ist an dasselbe Umsatzmodell gekoppelt — das Budget fließt dorthin, wo es am schnellsten wächst.",
   "services.items": [
@@ -502,6 +507,7 @@ tr: {
   "hero.fc1": "Organik trafik", "hero.fc2": "SERP sıralaması", "hero.fc3": "Bu haftaki lead",
   "stats.s1": "Büyütülen marka", "stats.s2": "Ortalama ROAS", "stats.s3": "Yönetilen reklam bütçesi", "stats.s4": "Müşteri devamlılığı",
   "marquee.label": "Markalarımız",
+  "film.eyebrow": "Marka filmi", "film.title": "Stüdyoyla tanışın.", "film.sub": "Kim olduğumuzu ve nasıl çalıştığımızı anlatan on bir saniye.",
   "services.eyebrow": "Ne yapıyoruz", "services.title": "Altı disiplin.<br>Tek büyüme motoru.",
   "services.sub": "Her kanal aynı gelir modeline bağlıdır; bütçe en hızlı bileşik getiriye kayar.",
   "services.items": [
