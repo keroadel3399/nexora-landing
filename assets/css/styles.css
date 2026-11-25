@@ -1276,7 +1276,7 @@ html[dir="rtl"] .brand-tagline { direction: ltr; text-align: right; unicode-bidi
 /* Brand strip (real logos, transparent) */
 .marquee-track { align-items: center; gap: 0; }
 .marquee-track img { margin-inline-end: 56px; }
-.marquee-track img { display: block; width: auto; flex: none; opacity: .88; transition: opacity .3s; }
+.marquee-track img { display: block; flex: none; max-width: none; opacity: .88; }
 .marquee-track img:hover { opacity: 1; }
 
 /* Retention gauge: label stays inside the ring */
@@ -1291,3 +1291,14 @@ html[dir="rtl"] .brand-tagline { direction: ltr; text-align: right; unicode-bidi
 /* Footer tagline: one line, smaller */
 .footer-brand p.brand-tagline { max-width: none; white-space: nowrap; font-size: clamp(8.5px, 2.5vw, 11px); letter-spacing: .2em; margin: 14px 0 24px; }
 html[dir="rtl"] .brand-tagline { text-align: right; }
+
+/* Marquee stability: fixed-size logos, own compositor layer */
+.marquee-track { will-change: transform; backface-visibility: hidden; }
+
+/* Marquee: no mask-image (iOS drops masked animated layers); edge fades via overlays */
+.marquee { -webkit-mask-image: none !important; mask-image: none !important; }
+.marquee::before, .marquee::after { content: ""; position: absolute; top: 0; bottom: 0; width: 14%; z-index: 2; pointer-events: none; }
+.marquee::before { left: 0; background: linear-gradient(90deg, var(--bg, #0a0a0a), rgba(10,10,10,0)); }
+.marquee::after { right: 0; background: linear-gradient(270deg, var(--bg, #0a0a0a), rgba(10,10,10,0)); }
+.marquee-track { opacity: 1 !important; visibility: visible !important; }
+.marquee-track img { opacity: .9 !important; visibility: visible !important; }
