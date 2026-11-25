@@ -57,7 +57,7 @@ function build(animate){
  h+='<p class="bk-err">'+(st.status==="invalid"?esc(t.invalid):st.status==="pick"?esc(t.pick):st.status==="error"?esc(t.err):st.status==="taken"?esc(t.taken):"")+'</p>';
  h+='<button type="button" class="btn btn-primary bk-submit" data-submit="1"'+(st.status==="sending"?" disabled":"")+'>'+esc(st.status==="sending"?t.sending:t.submit)+'</button><p class="bk-note">'+esc(amt(t.dep))+'</p>'+curBar()+'</div></div>';
  return h}
-function render(animate){if(!sec)return;var fs=sec.querySelector(":focus");var ff=fs&&fs.getAttribute&&fs.getAttribute("data-f");sec.innerHTML=build();if(animate){sec.classList.add("bk-in")}
+function render(animate){if(!sec)return;var fs=sec.querySelector(":focus");var ff=fs&&fs.getAttribute&&fs.getAttribute("data-f");sec.innerHTML=build();var _k=st.status+"|"+lang();if(!document.getElementById("bk-still-css")){var _s=document.createElement("style");_s.id="bk-still-css";_s.textContent=".bk-still .bk-a,.bk-still .bk-day:not(.is-booked),.bk-still .bk-slot:not(.is-booked){opacity:1!important;animation:none!important}.bk-still .bk-sum,.bk-still .bk-check{animation:none!important}.bk-still .bk-sum.is-on{opacity:1}";document.head.appendChild(_s)}if(animate&&_k!==window.__bkK){window.__bkK=_k;sec.classList.remove("bk-still");sec.classList.add("bk-in")}else{sec.classList.remove("bk-in");sec.classList.add("bk-still")}
  if(ff){var n=sec.querySelector('[data-f="'+ff+'"]');if(n){n.focus();try{var l=n.value.length;n.setSelectionRange(l,l)}catch(e){}}}}
 function send(){var L=lang(),t=T[L];if(st.status==="sending")return;
  if(!st.name.trim()||!st.phone.trim()){st.status="invalid";render(1);return}
