@@ -1302,3 +1302,7 @@ html[dir="rtl"] .brand-tagline { text-align: right; }
 .marquee::after { right: 0; background: linear-gradient(270deg, var(--bg, #0a0a0a), rgba(10,10,10,0)); }
 .marquee-track { opacity: 1 !important; visibility: visible !important; }
 .marquee-track img { opacity: .9 !important; visibility: visible !important; }
+
+/* Hero phrase: solid lime (gradient-clipped text with animated chars vanishes on iOS webviews) */
+.hero-title .grad { background: none !important; -webkit-background-clip: border-box !important; background-clip: border-box !important; color: #c6ff00 !important; -webkit-text-fill-color: #c6ff00 !important; text-shadow: 0 0 28px rgba(198,255,0,.35); }
+.hero-title .grad .char { color: #c6ff00; -webkit-text-fill-color: #c6ff00; }

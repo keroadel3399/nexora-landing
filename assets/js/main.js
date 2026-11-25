@@ -153,6 +153,11 @@ function splitHero(animate) {
     }
   });
   requestAnimationFrame(() => requestAnimationFrame(() => title.classList.add("split-done")));
+  // safety net: whatever happens (stalled animation, webview quirk), the full headline is visible after the typing time
+  const settle = () => { title.classList.remove("will-split"); title.classList.add("split-done", "force-done"); };
+  setTimeout(settle, 2400);
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) setTimeout(settle, 2400); });
+  window.addEventListener("pageshow", () => setTimeout(settle, 2400));
 }
 
 /* ---------- reveal ---------- */
