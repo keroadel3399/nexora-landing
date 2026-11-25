@@ -1272,3 +1272,9 @@ html[dir="rtl"] .brand-tagline { direction: ltr; text-align: right; unicode-bidi
 .bk-cur-opt b { min-width: 38px; color: #f3f3ee; font-weight: 800; }
 .bk-cur-opt span { font-size: 12px; opacity: .85; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .bk-cur-opt:hover, .bk-cur-opt.is-on { background: rgba(198,255,0,.12); color: #fff; }
+
+/* Brand strip (real logos, transparent) */
+.marquee-track { align-items: center; gap: 0; }
+.marquee-track img { margin-inline-end: 56px; }
+.marquee-track img { display: block; width: auto; flex: none; opacity: .88; transition: opacity .3s; }
+.marquee-track img:hover { opacity: 1; }

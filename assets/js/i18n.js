@@ -16,7 +16,7 @@ en: {
   "hero.cta1": "Get a free growth audit", "hero.cta2": "See our results", "hero.proof": "Rated by 180+ founders & CMOs",
   "hero.fc1": "Organic traffic", "hero.fc2": "SERP ranking", "hero.fc3": "Leads this week",
   "stats.s1": "Brands scaled", "stats.s2": "Average ROAS", "stats.s3": "Ad spend managed", "stats.s4": "Client retention",
-  "marquee.label": "Trusted by fast-moving teams worldwide",
+  "marquee.label": "Our brands",
   "services.eyebrow": "What we do", "services.title": "Six disciplines.<br>One growth engine.",
   "services.sub": "Every channel is connected to the same revenue model, so budget moves to whatever compounds fastest.",
   "services.items": [
@@ -113,7 +113,7 @@ ar: {
   "hero.cta1": "احصل على تحليل نمو مجاني", "hero.cta2": "شاهد نتائجنا", "hero.proof": "بتقييم أكثر من 180 مؤسسًا ومدير تسويق",
   "hero.fc1": "زيادة الزيارات العضوية", "hero.fc2": "ترتيب نتائج البحث", "hero.fc3": "عميل محتمل هذا الأسبوع",
   "stats.s1": "علامة طوّرناها", "stats.s2": "متوسط العائد على الإنفاق", "stats.s3": "إنفاق إعلاني مُدار", "stats.s4": "معدل بقاء العملاء",
-  "marquee.label": "موثوقون من فرق سريعة النمو حول العالم",
+  "marquee.label": "براندات بنيناها",
   "services.eyebrow": "ماذا نقدم", "services.title": "ستة تخصصات.<br>محرك نمو واحد.",
   "services.sub": "كل قناة مترابطة مع نموذج الإيرادات نفسه، فتتحرك الميزانية نحو ما يتراكم أسرع.",
   "services.items": [
@@ -210,7 +210,7 @@ fr: {
   "hero.cta1": "Audit de croissance offert", "hero.cta2": "Voir nos résultats", "hero.proof": "Noté par 180+ fondateurs & CMOs",
   "hero.fc1": "Trafic organique", "hero.fc2": "Position SERP", "hero.fc3": "Leads cette semaine",
   "stats.s1": "Marques accompagnées", "stats.s2": "ROAS moyen", "stats.s3": "Budget publicitaire géré", "stats.s4": "Fidélisation client",
-  "marquee.label": "La confiance d'équipes ambitieuses dans le monde entier",
+  "marquee.label": "Nos marques",
   "services.eyebrow": "Notre expertise", "services.title": "Six disciplines.<br>Un moteur de croissance.",
   "services.sub": "Chaque canal est relié au même modèle de revenus : le budget va là où ça compose le plus vite.",
   "services.items": [
@@ -307,7 +307,7 @@ es: {
   "hero.cta1": "Auditoría de crecimiento gratis", "hero.cta2": "Ver resultados", "hero.proof": "Valorado por 180+ fundadores y CMOs",
   "hero.fc1": "Tráfico orgánico", "hero.fc2": "Posición en Google", "hero.fc3": "Leads esta semana",
   "stats.s1": "Marcas escaladas", "stats.s2": "ROAS promedio", "stats.s3": "Inversión publicitaria gestionada", "stats.s4": "Retención de clientes",
-  "marquee.label": "Elegido por equipos ambiciosos de todo el mundo",
+  "marquee.label": "Nuestras marcas",
   "services.eyebrow": "Qué hacemos", "services.title": "Seis disciplinas.<br>Un motor de crecimiento.",
   "services.sub": "Cada canal está conectado al mismo modelo de ingresos: el presupuesto se mueve hacia lo que compone más rápido.",
   "services.items": [
@@ -404,7 +404,7 @@ de: {
   "hero.cta1": "Kostenloses Growth-Audit", "hero.cta2": "Ergebnisse ansehen", "hero.proof": "Bewertet von 180+ Gründern & CMOs",
   "hero.fc1": "Organischer Traffic", "hero.fc2": "SERP-Ranking", "hero.fc3": "Leads diese Woche",
   "stats.s1": "Skalierte Marken", "stats.s2": "Durchschnittlicher ROAS", "stats.s3": "Verwaltetes Ad-Budget", "stats.s4": "Kundenbindung",
-  "marquee.label": "Vertraut von wachstumsstarken Teams weltweit",
+  "marquee.label": "Unsere Marken",
   "services.eyebrow": "Was wir tun", "services.title": "Sechs Disziplinen.<br>Ein Wachstumsmotor.",
   "services.sub": "Jeder Kanal ist an dasselbe Umsatzmodell gekoppelt — das Budget fließt dorthin, wo es am schnellsten wächst.",
   "services.items": [
@@ -501,7 +501,7 @@ tr: {
   "hero.cta1": "Ücretsiz büyüme analizi", "hero.cta2": "Sonuçları gör", "hero.proof": "180+ kurucu ve CMO tarafından puanlandı",
   "hero.fc1": "Organik trafik", "hero.fc2": "SERP sıralaması", "hero.fc3": "Bu haftaki lead",
   "stats.s1": "Büyütülen marka", "stats.s2": "Ortalama ROAS", "stats.s3": "Yönetilen reklam bütçesi", "stats.s4": "Müşteri devamlılığı",
-  "marquee.label": "Dünyanın dört yanından hızlı büyüyen ekiplerin tercihi",
+  "marquee.label": "Markalarımız",
   "services.eyebrow": "Ne yapıyoruz", "services.title": "Altı disiplin.<br>Tek büyüme motoru.",
   "services.sub": "Her kanal aynı gelir modeline bağlıdır; bütçe en hızlı bileşik getiriye kayar.",
   "services.items": [
