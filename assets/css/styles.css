@@ -1171,3 +1171,6 @@ section[id] { scroll-margin-top: 92px; }
 .srv-card, .case, .plan, .faq-item, .slide, .results-panel, .stats, .console, .float-card {
   -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
 }
+
+/* hero safety net: after the entrance, force final state (webview animation stalls) */
+.hero-title.force-done .char, .hero-title.force-done .line { opacity: 1 !important; transform: none !important; animation: none !important; filter: none !important; }

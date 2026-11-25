@@ -25,3 +25,29 @@
     if (history.replaceState) history.replaceState(null, '', id);
   });
 })();
+
+/* Reveal safety net: webviews can drop IntersectionObserver / animation events.
+   Sample every 400ms, reveal anything in view, and always finish the hero. */
+(function () {
+  var t0 = Date.now();
+  function sweep() {
+    var vh = window.innerHeight || 800;
+    var els = document.querySelectorAll('[data-reveal]:not(.visible)');
+    for (var i = 0; i < els.length; i++) {
+      var r = els[i].getBoundingClientRect();
+      if (r.top < vh * 0.95 && r.bottom > 0) els[i].classList.add('visible');
+    }
+    var age = Date.now() - t0;
+    var title = document.querySelector('.hero-title');
+    if (title && age > 1800 && !title.classList.contains('split-done')) title.classList.add('split-done');
+    if (age > 3200 && title) title.classList.add('force-done');
+    if (age > 3000) {
+      var hero = document.querySelectorAll('.hero [data-reveal]:not(.visible)');
+      for (var j = 0; j < hero.length; j++) hero[j].classList.add('visible');
+    }
+  }
+  setInterval(sweep, 400);
+  window.addEventListener('scroll', sweep, { passive: true });
+  window.addEventListener('touchmove', sweep, { passive: true });
+  window.addEventListener('load', sweep);
+})();
